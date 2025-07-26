@@ -19,51 +19,46 @@ export default function Profile() {
 
   return (
     <div style={{ backgroundColor: "#fff0f6", minHeight: "100vh" }}>
-    <Stack
-      h={400}
-      bg="var(--mantine-color-body)"
-      align="center"
-      justify="center"
-      gap="xs"
-    >
-      <Paper
-        shadow="md"
-        radius="lg"
-        p="xl"
-        withBorder
-        bg="#fff0f6" 
-        style={{ minWidth: 350 }}
+      <Stack
+        h={400}
+        bg="var(--mantine-color-body)"
+        align="center"
+        justify="center"
+        gap="xs"
       >
-        <Center>
-          <Avatar
-            variant="light"
-            radius="xl"
-            size="xl"
-            color="pink"
-          >
-            {profileData?.name?.[0]?.toUpperCase()}
-          </Avatar>
-        </Center>
+        <Paper
+          shadow="md"
+          radius="lg"
+          p="xl"
+          withBorder
+          bg="#fff0f6" 
+          style={{ minWidth: 350 }}
+        >
+          <Center>
+            <Avatar
+              variant="light"
+              radius="xl"
+              size="xl"
+              color="pink"
+            >
+              {profileData?.name?.[0]?.toUpperCase()}
+            </Avatar>
+          </Center>
 
-        <Text ta="center" tt="capitalize" fw={700} size="lg" c="pink">
-  🌸 {profileData?.name}
-</Text>
+          <Text ta="center" tt="capitalize" fw={700} size="lg" c="pink">
+            🌸 {profileData?.name}
+          </Text>
 
+          <Text ta="center" tt="lowercase" c="grape">
+            {profileData?.email}
+          </Text>
 
-        <Text ta="center" tt="lowercase" c="grape">
-          {profileData?.email}
-        </Text>
-
-        <Text ta="center" size="sm" mt="xs" c="dimmed">
-          <strong>User ID:</strong> {profileData?.userId}
-        </Text>
-
-        <Text ta="center" size="sm" c="dimmed">
-          <strong>Account Created:</strong>{" "}
-          {new Date(profileData?.createdAt).toLocaleString()}
-        </Text>
-      </Paper>
-    </Stack>
+          <Text ta="center" size="sm" c="dimmed" mt="xs">
+            <strong>Account Created:</strong>{" "}
+            {new Date(profileData?.createdAt).toLocaleString()}
+          </Text>
+        </Paper>
+      </Stack>
     </div>
   );
 }
