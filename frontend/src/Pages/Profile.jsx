@@ -52,6 +52,7 @@ export default function Profile() {
           <Text ta="center" tt="lowercase" c="grape">
             {profileData?.email}
           </Text>
+          <Text ta="center" size="sm" mt="xs" c="dimmed">User ID: {profileData?._id}</Text>
 
           <Text ta="center" size="sm" c="dimmed" mt="xs">
             <strong>Account Created:</strong>{" "}
